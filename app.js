@@ -29,8 +29,9 @@ function winner(result, playerSelection, computerSelection) {
 
 function getUserInput() {
 	let gatherChoice = true;
+	let userChoice;
 	while (gatherChoice) {
-		let userChoice = prompt("Choice rock, paper, or scissors");
+		userChoice = prompt("Choice rock, paper, or scissors");
 		userChoice =
 			userChoice[0].toUpperCase() + userChoice.slice(1).toLowerCase();
 		if (
@@ -41,6 +42,7 @@ function getUserInput() {
 			gatherChoice = false;
 		}
 	}
+	return userChoice;
 }
 
 let userScore = 0;
