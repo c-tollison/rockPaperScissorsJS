@@ -4,27 +4,62 @@ let computerPlay = () => {
 };
 
 let playRound = (playerSelection, computerSelection) => {
-	playerSelection =
-		playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
-
-	if (playerSelection == computerSelection) {
-		return "No winner!";
-	} else if (playerSelection == "Rock" && computerSelection == "Paper") {
-		return "You Lose! Paper beats Rock!";
+	if (playerSelection == "Rock" && computerSelection == "Paper") {
+		return false;
 	} else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-		return "You Win! Rock beats Scissors!";
+		return true;
 	} else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-		return "You Win! Scissors beats Paper!";
+		return true;
 	} else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-		return "You Lose! Rock beats Scissors!";
+		return false;
 	} else if (playerSelection == "Paper" && computerSelection == "Rock") {
-		return "You Win! Paper beats Rock!";
+		return true;
 	} else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-		return "You Lose! Scissors beats Paper!";
+		return false;
 	}
 };
 
-const playerSelection = prompt("Choice rock, paper, or scissors");
-const computerSelection = computerPlay();
+function winner(result, playerSelection, computerSelection) {
+	if (result) {
+		return `You Win this round! ${playerSelection} beats ${computerSelection}!`;
+	} else {
+		return `You Lose this round! ${computerSelection} beats ${playerSelection}!`;
+	}
+}
 
-console.log(playRound(playerSelection, computerSelection));
+function getUserInput() {
+	let gatherChoice = true;
+	while (gatherChoice) {
+		let userChoice = prompt("Choice rock, paper, or scissors");
+		userChoice =
+			userChoice[0].toUpperCase() + userChoice.slice(1).toLowerCase();
+		if (
+			userChoice == "Rock" ||
+			userChoice == "Paper" ||
+			userChoice == "Scissors"
+		) {
+			gatherChoice = false;
+		}
+	}
+}
+
+let userScore = 0;
+let computerScore = 0;
+for (let i = 0; i < 5; i++) {
+	let playerSelection = getUserInput();
+	let computerSelection = computerPlay();
+	if (playerSelection == computerSelection) {
+		console.log("There was a tie!");
+	} else {
+		let result = playRound(playerSelection, computerSelection);
+		console.log(winner(result, playerSelection, computerSelection));
+		if (result) userScore++;
+		else computerScore++;
+	}
+}
+
+if (userScore > computerScore) {
+	console.log("You win the game!");
+} else {
+	console.log("You lost the game!");
+}
