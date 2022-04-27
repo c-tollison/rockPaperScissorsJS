@@ -6,6 +6,7 @@
 	text-decoration: none;
 	color: #292828;
 	font-family: "Source Serif 4", sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 1000px;
+	min-height: 100vh;
 	gap: 15px;
 }
 
@@ -35,37 +36,27 @@ body {
 	width: 450px;
 	height: 150px;
 	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.scoreBoard {
+	width: 100px;
+	height: 100px;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
 }
 
-.players {
-	width: 250px;
-	padding-left: 12px;
-	padding-right: -4px;
-	height: 50px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.scores {
-	width: 450px;
-	height: 50px;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-}
-
-.players p {
-	font-size: 24px;
+.scoreBoard :first-child {
 	color: white;
+	font-size: 20px;
 }
 
-.scores p {
+.scoreBoard :nth-child(2) {
 	color: white;
-	font-size: 36px;
+	font-size: 30px;
 }
 
 .buttons {
@@ -83,8 +74,8 @@ button {
 	height: 100px;
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 	background-color: #c38d9e;
-	font-size: 16px;
 	color: white;
+	font-size: 24px;
 }
 
 button:active {
@@ -100,12 +91,13 @@ button:active {
 }
 
 .movesContainer p {
-	font-size: 16px;
+	font-size: 20px;
 	color: white;
 }
 
 .playAgain {
 	height: 50px;
+	font-size: 16px;
 }
 
 .visible {
