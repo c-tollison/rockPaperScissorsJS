@@ -1,0 +1,113 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color: #292828;
+	font-family: "Source Serif 4", sans-serif;
+}
+
+body {
+	background-color: #41b3a3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 1000px;
+	gap: 15px;
+}
+
+.gameBoard {
+	border: 3px solid #e8a87c;
+	border-radius: 32px;
+	background-color: #e27d60;
+	width: 500px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.scoreContainer {
+	width: 450px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.players {
+	width: 250px;
+	padding-left: 12px;
+	padding-right: -4px;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.scores {
+	width: 450px;
+	height: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.players p {
+	font-size: 24px;
+	color: white;
+}
+
+.scores p {
+	color: white;
+	font-size: 36px;
+}
+
+.buttons {
+	width: 450px;
+	height: 150px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+button {
+	border: none;
+	border-radius: 6px;
+	width: 100px;
+	height: 100px;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+	background-color: #c38d9e;
+	font-size: 16px;
+	color: white;
+}
+
+button:active {
+	box-shadow: none;
+}
+
+.movesContainer {
+	height: 25px;
+	width: 450px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.movesContainer p {
+	font-size: 16px;
+	color: white;
+}
+
+.playAgain {
+	height: 50px;
+}
+
+.visible {
+	visibility: hidden;
+}

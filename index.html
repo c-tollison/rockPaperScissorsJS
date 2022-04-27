@@ -4,9 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Rock, Paper, Scissors</title>
+		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 	<body>
-		<script src="app.js"></script>
+		<div class="gameBoard">
+			<div class="scoreContainer">
+				<div class="players">
+					<p>Player</p>
+					<p>Computer</p>
+				</div>
+				<div class="scores">
+					<p id="playerScoreBoard">0</p>
+					<p id="computerScoreBoard">0</p>
+				</div>
+			</div>
+			<div class="buttons">
+				<button id="rock">Rock</button>
+				<button id="paper">Paper</button>
+				<button id="scissors">Scissors</button>
+			</div>
+			<div class="movesContainer">
+				<p class="displayBoard"></p>
+			</div>
+		</div>
+		<button class="playAgain visible">Play Again?</button>
 	</body>
+	<script src="app.js"></script>
 </html>
